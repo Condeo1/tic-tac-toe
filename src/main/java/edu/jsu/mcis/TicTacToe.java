@@ -8,7 +8,7 @@ public class TicTacToe {
 	private char playerTurn = 'X';
 	protected int turnCounter;
 	
-	public void startNewGame(){
+	public TicTacToe(){
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j ++){
 				board[i][j] = '#';
@@ -16,6 +16,7 @@ public class TicTacToe {
 		}
 		turnCounter = 0;
 	}
+	
 	
 	public void markLocation(int x, int y){
 		if(board[x][y] == '#'){
@@ -58,8 +59,6 @@ public class TicTacToe {
 	
 	public static void main(String[] args) {
 		TicTacToe t = new TicTacToe();
-		
-		t.startNewGame();
 		
 		Scanner playerInput = new Scanner(System.in);
 		int x, y;

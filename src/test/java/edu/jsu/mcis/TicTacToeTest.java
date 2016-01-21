@@ -10,7 +10,6 @@ public class TicTacToeTest {
 	@Test
 	public void testInitialBoardIsEmpty() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j ++){
@@ -22,7 +21,6 @@ public class TicTacToeTest {
 	@Test
 	public void testMarkXInUpperRightCorner() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		t.markLocation(0,2);
 		
@@ -32,7 +30,6 @@ public class TicTacToeTest {
 	@Test
 	public void testMarkOInBottomLeftCorner() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		
 		t.markLocation(0,2);
@@ -44,7 +41,6 @@ public class TicTacToeTest {
 	@Test
 	public void testUnableToMarkOverExistingMark() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		t.markLocation(0,0);
 		t.markLocation(0,0);
@@ -55,7 +51,6 @@ public class TicTacToeTest {
 	@Test
 	public void testGameIsNotOverAfterTheFirstMark() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		while(t.turnCounter < 9){
 			t.markLocation(0, 0);
@@ -70,7 +65,6 @@ public class TicTacToeTest {
 	@Test
 	public void testGameIsWonByXHorizontallyAcrossTopRow() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		t.markLocation(0,0);
 		t.markLocation(1,0);
@@ -86,7 +80,6 @@ public class TicTacToeTest {
 	@Test
 	public void testGameIsOverByTieIfAllLocationsAreFilled() {
 		TicTacToe t = new TicTacToe();
-		t.startNewGame();
 		
 		String winner = "None";
 		
