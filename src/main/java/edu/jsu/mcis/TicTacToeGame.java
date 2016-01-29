@@ -37,21 +37,26 @@ public class TicTacToeGame extends JPanel implements ActionListener{
 	
 	private void checkForWin(){
 		String winner = model.getWinner();
-		JOptionPane p = new JOptionPane();
-		p.setName("Game Over");
+		final String s;
 		if(winner == "X"){
-			
-			p.showMessageDialog(this, "Game Over", "The Winner is X", JOptionPane.INFORMATION_MESSAGE);
+			s = "X";
 		}
 		
 		else if(winner == "O"){
-			p.showMessageDialog(this, "Game Over", "The Winner is O", JOptionPane.INFORMATION_MESSAGE);
+			s = "O";
 		}
 		
 		else if(winner == "TIE"){
-			p.showMessageDialog(this, "Game Over", "The Winner is TIE", JOptionPane.INFORMATION_MESSAGE);
+			s = "TIE";
 		}
-	
+		else{ s = "";}
+		if(s.length() > 0){
+			MyDialog dialog = new MyDialog("The winner is " + s, "Game Over");
+			Thread t = new Thread(dialog);
+			t.start();
+				
+		}
+		
 	}
 	
 	public static void main(String[] args){
