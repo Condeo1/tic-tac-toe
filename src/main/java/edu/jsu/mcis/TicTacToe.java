@@ -23,6 +23,7 @@ public class TicTacToe {
 			board[x][y] = playerTurn;
 			if(playerTurn == 'X') playerTurn = 'O';
 			else playerTurn = 'X';
+			turnCounter++;
 		}
 	}
 	
@@ -53,8 +54,9 @@ public class TicTacToe {
 		else if(board[0][0] == 'O' && board[0][0] == board[1][1] && board[0][0] == board[2][2]) return "O";
 		else if(board[0][2] == 'O' && board[0][2] == board[1][1] && board[0][2] == board[2][0]) return "O";
 		
-		else return "TIE";
+		else if (turnCounter == 9) return "TIE";
 		
+		else return "NONE";
 	}
 	
 	public static void main(String[] args) {
@@ -65,8 +67,12 @@ public class TicTacToe {
 		
 		String winner = t.getWinner();
 		
-		for(;t.turnCounter < 9; t.turnCounter++){
-			
+		while(t.turnCounter < 9){
+			for(int i = 0; i < 3; i++){
+				for(int j = 0; j < 3; j ++){
+					System.out.println(t.board[i][j]);
+				}
+			}
 			System.out.println("Player " + Character.toString(t.playerTurn)
 			+ ", Input the coordinates of the space you want to mark, seperated by a space: ");
 			x = playerInput.nextInt();
